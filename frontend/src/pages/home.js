@@ -12,12 +12,6 @@ query{
 `
 function Home(){
     const {loading, data,error} =useQuery(FETCH_POSTS_QUERY);
-    if(loading) {
-        console.log(loading)
-    }
-    if(error){
-        console.log(error)
-    }
     if(data){
         console.log(data)
     }

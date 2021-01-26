@@ -1,4 +1,4 @@
-import { GeneralLayout } from './../../layouts'
+import { GeneralLayout } from './../../layouts';
 
 const LayoutsItems = [
     {

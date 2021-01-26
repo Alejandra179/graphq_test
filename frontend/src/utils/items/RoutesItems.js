@@ -1,4 +1,4 @@
-import { Home, Demo } from './../../pages'
+import { Home,Login,Register} from './../../pages'
 
 const RoutesItems = [
     {
@@ -8,12 +8,19 @@ const RoutesItems = [
         exact: true,
         component: Home
     },{
-        path: '/demo',
-        name: 'Demo',
+        path: '/login',
+        name: 'Login',
         icon: 'folder',
         exact: true,
-        component: Demo
-    }
+        component: Login
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        icon: 'folder',
+        exact: true,
+        component: Register
+    },
 ]
 
 export default RoutesItems

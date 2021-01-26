@@ -1,17 +1,25 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
-import 'semantic-ui-css/semantic.min.css'
-import MenuBar from './components/MenuBar'
-import Home from './pages/home';
-import Register from './pages/register';
-import Login from './pages/login';
+import {BrowserRouter as Router,Switch, Route} from 'react-router-dom'
+import 'semantic-ui-css/semantic.min.css';
+import { LayoutsItems } from './utils';
+
 function App(){
     return(
         <Router>
-            <MenuBar/>
-            <Route exact path='/' component={Home}/>
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/register' component={Register}/>
+            <Switch>
+        {
+          LayoutsItems.map((layout, key) => {
+            return(
+              <Route
+                key={key}
+                path={layout.path}
+                exact={layout.exact}
+                component={layout.component}
+              />
+            )
+          })
+        }
+      </Switch>
             
         </Router>
     )

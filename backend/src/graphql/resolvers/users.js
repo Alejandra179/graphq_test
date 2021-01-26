@@ -1,7 +1,6 @@
-//q hacer con las consultas
-const User = require('./models/User');
+const User = require('./../../models/User');
 
-const resolvers = {
+module.exports = {
     Query: {
       usuarios: () => [],
       
@@ -9,7 +8,6 @@ const resolvers = {
           return await User.find() 
       }
       
-  
     },
     Mutation:{
         
@@ -31,5 +29,5 @@ const resolvers = {
     
   };
 
-module.exports= resolvers;
+
 
