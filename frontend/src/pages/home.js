@@ -1,11 +1,23 @@
 import React from 'react';
-import {useQuery} from '@apollo/client';
+import {useQuery} from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
-
+const FETCH_POSTS_QUERY =gql`
+query{
+    users{
+      name
+      _id
+    }
+}
+`
 function Home(){
-    const {loading, data} =useQuery(FETCH_POSTS_QUERY);
-
+    const {loading, data,error} =useQuery(FETCH_POSTS_QUERY);
+    if(loading) {
+        console.log(loading)
+    }
+    if(error){
+        console.log(error)
+    }
     if(data){
         console.log(data)
     }
@@ -14,13 +26,6 @@ function Home(){
     )
 }
 
-const FETCH_POSTS_QUERY =gql`
-{
-    users{
-      name
-      _id
-    }
-}
-`
+
 
 export default Home;
