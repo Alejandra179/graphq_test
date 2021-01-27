@@ -7,7 +7,8 @@ const RoutesItems = [
         icon: 'explore',
         exact: true,
         component: Home
-    },{
+    },
+    {
         path: '/login',
         name: 'Login',
         icon: 'folder',

@@ -7,6 +7,10 @@ query{
     users{
       name
       _id
+    },
+    getAccesorios{
+        marca
+        color
     }
 }
 `
