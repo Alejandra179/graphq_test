@@ -8,7 +8,7 @@ const resolvers = require('./graphql/resolvers')
 
 const startServer = async () => {
     const PORT = process.env.PORT || 4000
-    const ATLAS_URI = process.env.ATLAS_URI
+    const ATLAS_URI = process.env.ATLAS_URI;
     const app = express()
     const httpServer = createServer(app)
     const pubsub = new PubSub()
@@ -20,7 +20,7 @@ const startServer = async () => {
     
     server.applyMiddleware({ app, path: '/graphql', cors: false })
     server.installSubscriptionHandlers(httpServer)
-
+    const SECRET_KEY='clave secreta' 
     await mongoose.connect(ATLAS_URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
